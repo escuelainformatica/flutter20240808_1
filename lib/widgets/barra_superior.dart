@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter20240808/servicios/usuario_srv.dart';
 
 class BarraSuperior extends AppBar {
+
    BarraSuperior({Key? key}) : super(key: key);
 
   @override
@@ -12,6 +14,9 @@ class _BarraSuperiorState extends State<BarraSuperior> {
   Widget build(BuildContext context) {
     return AppBar(
       title: Text("listar productos"),
+      actions: [
+        Text(UsuarioSrv.usuario.userName??"(no hay usuario)")
+      ],
       leading: Builder(
         builder: (context) {
           return IconButton(

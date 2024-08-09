@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter20240808/modelos/producto.dart';
 import 'package:flutter20240808/servicios/producto_srv.dart';
 
 import '../modelos/producto.dart';

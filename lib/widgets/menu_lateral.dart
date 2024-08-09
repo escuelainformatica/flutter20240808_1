@@ -4,7 +4,8 @@ import 'package:flutter20240808/paginas/pagina_producto_listar.dart';
 import 'package:flutter20240808/widgets/fila_producto.dart';
 
 class MenuLateral extends StatefulWidget {
-  const MenuLateral({Key? key}) : super(key: key);
+  void Function()? refrescar=null;
+  MenuLateral({Key? key,this.refrescar}) : super(key: key);
 
   @override
   _MenuLateralState createState() => _MenuLateralState();
@@ -45,7 +46,15 @@ class _MenuLateralState extends State<MenuLateral> {
             onTap: () async {
               // Update the state of the app
               //_onItemTapped(1);
-              await Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaProductoInsertar(),));
+              await Navigator
+                  .push(context, MaterialPageRoute(builder: (context) => PaginaProductoInsertar(),))
+                  .then((v) {
+                    if(widget.refrescar!=null) {
+                      widget.refrescar!();
+                    }
+
+                  });
+              ;
               // Then close the drawer
               Navigator.pop(context);
             },

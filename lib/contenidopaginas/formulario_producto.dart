@@ -32,7 +32,11 @@ class _FormularioProductoState extends State<FormularioProducto> {
     });
     idProdCatCtrl.text = producto.idProductCategory.toString();
     idProdCatCtrl.addListener(() {
-      producto.idProductCategory = int.parse(idProdCatCtrl.text);
+      if(idProdCatCtrl.text!="") {
+        producto.idProductCategory = int.parse(idProdCatCtrl.text);
+      } else {
+        producto.idProductCategory=0;
+      }
     });
     priceCtrl.text = producto.price ?? "";
     priceCtrl.addListener(() {

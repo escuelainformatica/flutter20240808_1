@@ -5,7 +5,8 @@ import 'package:flutter20240808/paginas/pagina_producto_borrar.dart';
 
 class FilaProducto extends StatefulWidget {
   Producto producto;
-  FilaProducto(this.producto,{Key? key}) : super(key: key);
+  void Function() refrescar;
+  FilaProducto(this.producto,this.refrescar,{Key? key}) : super(key: key);
 
   @override
   _FilaProductoState createState() => _FilaProductoState();
@@ -38,9 +39,7 @@ class _FilaProductoState extends State<FilaProducto> {
                     context,
                     MaterialPageRoute(builder: (context) => PaginaProductoBorrar(widget.producto),
                     )).then((valor) {
-                  setState(() {
-                    //pendiente: borrar el elemento de la lista o cargar los datos.
-                  });
+                      widget.refrescar();
                 });
               },
               child: Text("Borrar"),

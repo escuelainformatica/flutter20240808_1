@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter20240808/paginas/pagina_login.dart';
 import 'package:flutter20240808/paginas/pagina_producto_insertar.dart';
 import 'package:flutter20240808/paginas/pagina_producto_listar.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: PaginaProductoListar(),
+      home: PaginaLogin(),
     );
   }
 }
